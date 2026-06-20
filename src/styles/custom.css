@@ -1,0 +1,37 @@
+:root {
+  /* 폰트는 Wanted Sans 하나로 고정 (한국어/영어 모두 커버) */
+  --sl-font: 'Wanted Sans Variable', sans-serif;
+}
+
+/* ion 테마가 일부 UI 텍스트에만 자체 폰트(Space Mono / system-mono)를 박아둔다.
+   전부 Wanted Sans로 통일한다. (코드/diagram의 monospace는 의도된 것이라 건드리지 않음) */
+#starlight__on-this-page, /* "On this page" 목차 제목 */
+summary span,             /* 사이드바 그룹 라벨 */
+.sl-badge {               /* 헤더/본문 배지 */
+  font-family: var(--sl-font) !important;
+}
+
+/* PlantUML 다이어그램(<figure class="plantuml-diagram">): 가운데 정렬 + 반응형 */
+.plantuml-diagram {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.plantuml-diagram .plantuml-img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 키보드 키 표기 */
+.sl-markdown-content kbd {
+  background-color: var(--sl-color-gray-6);
+  border: 1px solid var(--sl-color-gray-4);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  font-family: var(--sl-font-mono);
+  font-size: 0.85em;
+  line-height: 1;
+  color: var(--sl-color-white);
+  box-shadow: 0 1px 0 var(--sl-color-gray-4);
+  white-space: nowrap;
+}
