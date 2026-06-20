@@ -6,8 +6,10 @@ import { ion } from "starlight-ion-theme";
 
 // https://astro.build/config
 export default defineConfig({
-  // Private 사이트라 GitHub Pages용 site/base는 두지 않습니다.
-  // 나중에 배포(Cloudflare Pages/Vercel 등)할 때 site 값을 채우세요.
+  // GitHub Pages 배포: 프로젝트 페이지라 base에 레포명을 둔다.
+  // 주소 → https://wzrabbit.github.io/closet-fairy-diagrams
+  site: "https://wzrabbit.github.io",
+  base: "/closet-fairy-diagrams",
   // 임시 Cloudflare 터널 공유용: trycloudflare 호스트 허용 (공유가 끝나면 제거)
   vite: { server: { allowedHosts: [".trycloudflare.com"] } },
   integrations: [
