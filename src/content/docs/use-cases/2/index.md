@@ -9,11 +9,11 @@ description: 회원가입, 로그인, 로그아웃, 사용자 정보 관리 (일
 ## 요구사항
 이 영역은 다음 기능으로 이루어진다. 세부 요구사항은 각 하위 페이지에 적는다.
 
-- 회원가입: [회원가입 기능](/use-cases/2/2-1)
-- 로그인: [로그인 기능](/use-cases/2/2-2)
-- 로그아웃: [로그아웃 기능](/use-cases/2/2-3)
-- 사용자 정보 조회: [사용자 정보 조회](/use-cases/2/2-5)
-- 사용자 정보 수정: [사용자 정보 수정](/use-cases/2/2-6)
+- 회원가입: [회원가입 기능](/closet-fairy-diagrams/use-cases/2/2-1)
+- 로그인: [로그인 기능](/closet-fairy-diagrams/use-cases/2/2-2)
+- 로그아웃: [로그아웃 기능](/closet-fairy-diagrams/use-cases/2/2-3)
+- 사용자 정보 조회: [사용자 정보 조회](/closet-fairy-diagrams/use-cases/2/2-5)
+- 사용자 정보 수정: [사용자 정보 수정](/closet-fairy-diagrams/use-cases/2/2-6)
 
 로그인하면 인증된 세션이 유지되고, 로그인이 필요한 기능은 그 세션을 확인한다.
 
