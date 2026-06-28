@@ -87,126 +87,17 @@ export default defineConfig({
             { label: "피드백 재추천 받기", slug: "use-cases/6/6-2" },
           ],
         },
-        // 아래는 팀원 원본을 기계적으로 옮긴 구버전(리팩터링 전). 보존용이며 outdated/ 경로로 이동했다.
+        // Outdated 보관 전용 카테고리. 형식 변환 전 원본 자료를 여기에 모은다.
         {
-          label: "(Outdated) 코디 추천 시스템",
-          items: [
-            { label: "사용자 조건 처리", slug: "use-cases/outdated/6/6-1" },
-            {
-              label: "룰 기반 필터링",
-              items: [
-                { label: "개요", slug: "use-cases/outdated/6/6-2" },
-                {
-                  label: "날씨 기반 착용 판단",
-                  slug: "use-cases/outdated/6/6-2/6-2-1",
-                },
-                {
-                  label: "계절 기반 착용 판단",
-                  slug: "use-cases/outdated/6/6-2/6-2-2",
-                },
-              ],
-            },
-            {
-              label: "LLM 기반 코디 생성",
-              items: [
-                { label: "개요", slug: "use-cases/outdated/6/6-3" },
-                {
-                  label: "옷장 데이터 기반 생성",
-                  slug: "use-cases/outdated/6/6-3/6-3-1",
-                },
-                {
-                  label: "코디 다양성 확보",
-                  slug: "use-cases/outdated/6/6-3/6-3-2",
-                },
-              ],
-            },
-            {
-              label: "코디 검증 및 후처리",
-              items: [
-                { label: "개요", slug: "use-cases/outdated/6/6-4" },
-                {
-                  label: "옷장 내 존재 검증",
-                  slug: "use-cases/outdated/6/6-4/6-4-1",
-                },
-                {
-                  label: "날씨/조건 재검증",
-                  slug: "use-cases/outdated/6/6-4/6-4-2",
-                },
-                {
-                  label: "부적합 코디 제거",
-                  slug: "use-cases/outdated/6/6-4/6-4-3",
-                },
-              ],
-            },
-            { label: "리스크 분석", slug: "use-cases/outdated/6/6-5" },
-            {
-              label: "상품 연동",
-              items: [
-                { label: "개요", slug: "use-cases/outdated/6/6-6" },
-                {
-                  label: "부족 의류 분석",
-                  slug: "use-cases/outdated/6/6-6/6-6-1",
-                },
-                {
-                  label: "상품 추천 연결",
-                  slug: "use-cases/outdated/6/6-6/6-6-2",
-                },
-              ],
-            },
-          ],
-        },
-        {
-          label: "(Outdated) AI 기능 시스템",
+          label: "Outdated",
           items: [
             {
-              label: "추천 설명 생성",
-              items: [
-                { label: "개요", slug: "use-cases/outdated/7/7-1" },
-                {
-                  label: "추천 이유 생성",
-                  slug: "use-cases/outdated/7/7-1/7-1-1",
-                },
-                {
-                  label: "자연어 문장 구성",
-                  slug: "use-cases/outdated/7/7-1/7-1-2",
-                },
-              ],
+              label: "피드백 재추천",
+              slug: "use-cases/outdated/feedback-raw",
             },
             {
-              label: "리스크 안내 생성",
-              items: [
-                { label: "개요", slug: "use-cases/outdated/7/7-2" },
-                {
-                  label: "주의사항 문장 생성",
-                  slug: "use-cases/outdated/7/7-2/7-2-1",
-                },
-                {
-                  label: "날씨 기반 경고 메시지",
-                  slug: "use-cases/outdated/7/7-2/7-2-2",
-                },
-              ],
-            },
-            {
-              label: "피드백 기반 재추천",
-              items: [
-                { label: "개요", slug: "use-cases/outdated/7/7-3" },
-                {
-                  label: "피드백 입력 기능",
-                  slug: "use-cases/outdated/7/7-3/7-3-1",
-                },
-                {
-                  label: "피드백 문장 분석",
-                  slug: "use-cases/outdated/7/7-3/7-3-2",
-                },
-                {
-                  label: "조건 재구성",
-                  slug: "use-cases/outdated/7/7-3/7-3-3",
-                },
-                {
-                  label: "코디 재추천 생성",
-                  slug: "use-cases/outdated/7/7-3/7-3-4",
-                },
-              ],
+              label: "코디 추천 엔진",
+              slug: "use-cases/outdated/recommend-raw",
             },
           ],
         },
