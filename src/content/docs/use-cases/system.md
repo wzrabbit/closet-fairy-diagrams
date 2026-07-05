@@ -13,15 +13,16 @@ left to right direction
 skinparam packageStyle rectangle
 skinparam shadowing false
 
-actor "비회원" as Guest
+actor "사용자" as User
 actor "회원" as Member
+actor "구글 로그인" as Google
+actor "카카오 로그인" as Kakao
 actor "이미지 분석 AI" as ImageAI
 actor "코디 생성 AI" as CodyAI
 actor "날씨 정보 서비스" as Weather
 
 rectangle "사용자 관리 시스템" {
-  usecase "회원가입" as Register
-  usecase "로그인" as Login
+  usecase "소셜 로그인" as Login
   usecase "로그아웃" as Logout
   usecase "사용자 정보 조회" as ViewUser
   usecase "사용자 정보 수정" as EditUser
@@ -43,8 +44,9 @@ rectangle "코디 추천 시스템" {
   usecase "피드백 재추천 받기" as Refeedback
 }
 
-Guest --> Register
-Guest --> Login
+User --> Login
+Login --> Google
+Login --> Kakao
 Member --> Logout
 Member --> ViewUser
 Member --> EditUser

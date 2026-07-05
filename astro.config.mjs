@@ -57,8 +57,7 @@ export default defineConfig({
           label: "사용자 관리 시스템",
           items: [
             { label: "개요", slug: "use-cases/2" },
-            { label: "회원가입 기능", slug: "use-cases/2/2-1" },
-            { label: "로그인 기능", slug: "use-cases/2/2-2" },
+            { label: "소셜 로그인", slug: "use-cases/2/2-2" },
             { label: "로그아웃 기능", slug: "use-cases/2/2-3" },
             { label: "사용자 정보 조회", slug: "use-cases/2/2-5" },
             { label: "사용자 정보 수정", slug: "use-cases/2/2-6" },

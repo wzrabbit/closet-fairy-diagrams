@@ -1,21 +1,20 @@
 ---
 title: 사용자 관리 시스템
-description: 회원가입, 로그인, 로그아웃, 사용자 정보 관리 (일반 기준)
+description: 소셜 로그인(구글·카카오), 로그아웃, 사용자 정보 관리
 ---
 
 ## 개요
-회원 계정을 만들고, 로그인하고, 자신의 정보를 관리하는 영역이다. 아래 기능들의 요약이며 자세한 내용은 각 하위 페이지에 있다.
+회원이 소셜 로그인으로 계정을 만들고 로그인하며, 자신의 정보를 관리하는 영역이다. 로그인은 구글·카카오 소셜 로그인만 지원하고, 시스템은 비밀번호를 직접 다루지 않는다.
 
 ## 요구사항
 이 영역은 다음 기능으로 이루어진다. 세부 요구사항은 각 하위 페이지에 적는다.
 
-- 회원가입: [회원가입 기능](/closet-fairy-diagrams/use-cases/2/2-1)
-- 로그인: [로그인 기능](/closet-fairy-diagrams/use-cases/2/2-2)
+- 소셜 로그인(가입 겸): [소셜 로그인](/closet-fairy-diagrams/use-cases/2/2-2)
 - 로그아웃: [로그아웃 기능](/closet-fairy-diagrams/use-cases/2/2-3)
 - 사용자 정보 조회: [사용자 정보 조회](/closet-fairy-diagrams/use-cases/2/2-5)
 - 사용자 정보 수정: [사용자 정보 수정](/closet-fairy-diagrams/use-cases/2/2-6)
 
-로그인하면 인증된 세션이 유지되고, 로그인이 필요한 기능은 그 세션을 확인한다.
+로그인은 구글·카카오 계정으로 하며, 사용자는 "제공자 + 제공자 고유 ID"로 식별한다. 첫 소셜 로그인 시 계정이 자동으로 생성된다. 로그인하면 인증된 세션이 유지되고, 로그인이 필요한 기능은 그 세션을 확인한다.
 
 ## 유스케이스 다이어그램
 ```plantuml
@@ -24,24 +23,26 @@ left to right direction
 skinparam packageStyle rectangle
 skinparam shadowing false
 
-actor "비회원" as Guest
+actor "사용자" as User
 actor "회원" as Member
+actor "구글 로그인" as Google
+actor "카카오 로그인" as Kakao
 
 rectangle "사용자 관리 시스템" {
-  usecase "회원가입" as UC1
-  usecase "로그인" as UC2
-  usecase "로그아웃" as UC3
-  usecase "사용자 정보 조회" as UC5
-  usecase "사용자 정보 수정" as UC6
+  usecase "소셜 로그인" as Login
+  usecase "로그아웃" as Logout
+  usecase "사용자 정보 조회" as View
+  usecase "사용자 정보 수정" as Update
 }
 
-Guest --> UC1
-Guest --> UC2
-Member --> UC3
-Member --> UC5
-Member --> UC6
+User --> Login
+Login --> Google
+Login --> Kakao
+Member --> Logout
+Member --> View
+Member --> Update
 @enduml
 ```
 
 ## 정해야 하는 논의사항
-회원가입과 로그인 방식이 아직 정해지지 않았다. 가입할 때 사용자에게서 어떤 정보를 받을지, 그리고 로그인을 자체 계정으로 할지 아니면 네이버나 구글 같은 외부 계정 연동으로 할지를 정해야 한다.
+같은 사람이 구글과 카카오로 각각 로그인하면 지금은 별개 계정으로 둔다. 두 소셜 계정을 한 사용자로 잇는 계정 연동은 이번 범위에 넣지 않았고, 필요해지면 추후 논의한다.
