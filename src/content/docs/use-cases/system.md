@@ -36,6 +36,7 @@ rectangle "개인 설정" {
 
 rectangle "의류 관리" {
   usecase "옷 등록" as ClothAdd
+  usecase "등록 재시도" as ClothRetry
   usecase "옷 목록 조회" as ClothList
   usecase "옷 수정" as ClothEdit
   usecase "옷 삭제" as ClothDelete
@@ -55,6 +56,7 @@ Member --> EditUser
 Member --> Withdraw
 Member --> Settings
 Member --> ClothAdd
+Member --> ClothRetry
 Member --> ClothList
 Member --> ClothEdit
 Member --> ClothDelete
@@ -66,6 +68,7 @@ Recommend --> Reviewer
 Recommend --> Weather
 Refeedback --> CodyAI
 Refeedback --> Reviewer
+ClothRetry ..> ClothAdd : <<extend>>
 Refeedback ..> Recommend : <<extend>>
 @enduml
 ```

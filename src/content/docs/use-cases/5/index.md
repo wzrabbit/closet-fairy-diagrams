@@ -26,15 +26,18 @@ actor "이미지 분석 AI" as Vision
 
 rectangle "의류 관리" {
   usecase "옷 등록" as Create
+  usecase "등록 재시도" as Retry
   usecase "옷 목록 조회" as Read
   usecase "옷 수정" as Update
   usecase "옷 삭제" as Delete
 }
 
 Member --> Create
+Member --> Retry
 Member --> Read
 Member --> Update
 Member --> Delete
 Create --> Vision
+Retry ..> Create : <<extend>>
 @enduml
 ```
