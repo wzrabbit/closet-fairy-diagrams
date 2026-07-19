@@ -61,6 +61,7 @@ export default defineConfig({
             { label: "로그아웃 기능", slug: "use-cases/2/2-3" },
             { label: "사용자 정보 조회", slug: "use-cases/2/2-5" },
             { label: "사용자 정보 수정", slug: "use-cases/2/2-6" },
+            { label: "계정 탈퇴", slug: "use-cases/2/2-7" },
           ],
         },
         {

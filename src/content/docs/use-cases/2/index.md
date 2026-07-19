@@ -13,6 +13,7 @@ description: 소셜 로그인(구글·카카오), 로그아웃, 사용자 정보
 - 로그아웃: [로그아웃 기능](/closet-fairy-diagrams/use-cases/2/2-3)
 - 사용자 정보 조회: [사용자 정보 조회](/closet-fairy-diagrams/use-cases/2/2-5)
 - 사용자 정보 수정: [사용자 정보 수정](/closet-fairy-diagrams/use-cases/2/2-6)
+- 계정 탈퇴: [계정 탈퇴](/closet-fairy-diagrams/use-cases/2/2-7)
 
 로그인은 구글·카카오 계정으로 하며, 사용자는 "제공자 + 제공자 고유 ID"로 식별한다. 첫 소셜 로그인 시 계정이 자동으로 생성된다. 로그인하면 인증된 세션이 유지되고, 로그인이 필요한 기능은 그 세션을 확인한다.
 
@@ -33,6 +34,7 @@ rectangle "사용자 관리 시스템" {
   usecase "로그아웃" as Logout
   usecase "사용자 정보 조회" as View
   usecase "사용자 정보 수정" as Update
+  usecase "계정 탈퇴" as Withdraw
 }
 
 User --> Login
@@ -41,5 +43,6 @@ Login --> Kakao
 Member --> Logout
 Member --> View
 Member --> Update
+Member --> Withdraw
 @enduml
 ```

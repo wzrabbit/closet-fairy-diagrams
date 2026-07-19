@@ -27,6 +27,7 @@ rectangle "사용자 관리 시스템" {
   usecase "로그아웃" as Logout
   usecase "사용자 정보 조회" as ViewUser
   usecase "사용자 정보 수정" as EditUser
+  usecase "계정 탈퇴" as Withdraw
 }
 
 rectangle "개인 설정" {
@@ -51,6 +52,7 @@ Login --> Kakao
 Member --> Logout
 Member --> ViewUser
 Member --> EditUser
+Member --> Withdraw
 Member --> Settings
 Member --> ClothAdd
 Member --> ClothList
