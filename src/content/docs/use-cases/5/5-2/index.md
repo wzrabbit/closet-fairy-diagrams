@@ -26,7 +26,7 @@ description: 회원이 등록된 옷의 이미지나 속성을 고친다
 ### 속성 수정
 | ID | 요구사항 |
 | --- | --- |
-| FR-EDIT-07 | 회원은 7개 태깅 속성(category, item_name, color, style, season, thickness, is_waterproof)을 확인하고 고칠 수 있으며, 고친 값은 저장된다. |
+| FR-EDIT-07 | 회원은 7개 태깅 속성(category, item_name, color, style, season, thickness, is_waterproof)을 확인하고 고칠 수 있으며, 고친 값은 저장된다. 각 속성의 허용 값은 [의류 등록](/closet-fairy-diagrams/use-cases/5/5-1)의 속성별 허용 값 표를 따른다. |
 | FR-EDIT-08 | 등록 시 자동 태깅으로 비어 있던 속성도 회원이 채울 수 있다. 회원은 7개 속성 중 무엇이든 비워 둘 수 있으며, 모두 채울 의무는 없다. |
 
 ### 비기능 요구사항
