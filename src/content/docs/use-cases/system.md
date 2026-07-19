@@ -19,7 +19,8 @@ actor "구글 로그인" as Google
 actor "카카오 로그인" as Kakao
 actor "이미지 분석 AI" as ImageAI
 actor "코디 생성 AI" as CodyAI
-actor "날씨 정보 서비스" as Weather
+actor "AI 리뷰어" as Reviewer
+actor "외부 기상 API" as Weather
 
 rectangle "사용자 관리 시스템" {
   usecase "소셜 로그인" as Login
@@ -59,8 +60,10 @@ Member --> Recommend
 Member --> Refeedback
 ClothAdd --> ImageAI
 Recommend --> CodyAI
+Recommend --> Reviewer
 Recommend --> Weather
 Refeedback --> CodyAI
+Refeedback --> Reviewer
 Refeedback ..> Recommend : <<extend>>
 @enduml
 ```

@@ -12,7 +12,7 @@ description: 회원이 상황에 맞는 코디를 추천받고, 피드백으로 
 - 코디 추천 받기: 상황을 입력하면 코디 여러 벌과 설명·안내를 받는다. [코디 추천 받기](/closet-fairy-diagrams/use-cases/6/6-1)
 - 피드백 재추천 받기: 추천 결과에 말로 정정을 요청해 다시 받는다. [피드백 재추천 받기](/closet-fairy-diagrams/use-cases/6/6-2)
 
-추천에 쓰는 취향 정보(체질, 연령대, 성별, 선호 스타일)는 [개인 설정](/closet-fairy-diagrams/use-cases/3)에서 관리하고, 추천 대상이 되는 옷은 [의류 관리](/closet-fairy-diagrams/use-cases/5)에서 등록한 옷을 사용한다. 코디를 만드는 일은 코디 생성 AI가 맡고, 날씨 값은 외부 날씨 정보 서비스에서 받아 온다.
+추천에 쓰는 취향 정보(체질, 연령대, 성별, 선호 스타일)는 [개인 설정](/closet-fairy-diagrams/use-cases/3)에서 관리하고, 추천 대상이 되는 옷은 [의류 관리](/closet-fairy-diagrams/use-cases/5)에서 등록한 옷을 사용한다. 코디를 만드는 일은 코디 생성 AI가 맡고, 만들어진 코디는 AI 리뷰어가 한 번 더 검증한다. 날씨 값은 외부 기상 API에서 받아 온다.
 
 ## 유스케이스 다이어그램
 ```plantuml
@@ -23,7 +23,8 @@ skinparam shadowing false
 
 actor "회원" as Member
 actor "코디 생성 AI" as AI
-actor "날씨 정보 서비스" as Weather
+actor "AI 리뷰어" as Reviewer
+actor "외부 기상 API" as Weather
 
 rectangle "코디 추천 시스템" {
   usecase "코디 추천 받기" as Recommend
@@ -33,8 +34,10 @@ rectangle "코디 추천 시스템" {
 Member --> Recommend
 Member --> Refeedback
 Recommend --> AI
+Recommend --> Reviewer
 Recommend --> Weather
 Refeedback --> AI
+Refeedback --> Reviewer
 Refeedback ..> Recommend : <<extend>>
 @enduml
 ```
